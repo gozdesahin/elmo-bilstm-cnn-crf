@@ -11,7 +11,7 @@
 .project
 
 
-
+pretrained/*
 data/ace
 data/conll2003_ner
 data/ecb+
