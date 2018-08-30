@@ -36,5 +36,5 @@ addEmbeddings(dataMatrix, embLookup.sentenceLookup)
 # :: Tag the input ::
 tags = lstmModel.tagSentences(dataMatrix)
 
-test_pre, test_rec, test_f1 = lstmModel.computeF1('conll2000_data/clean',dataMatrix)
+test_pre, test_rec, test_f1 = lstmModel.computeF1('conll2000_data/perturbed/03',dataMatrix)
 print("Test-Data: Prec: %.3f, Rec: %.3f, F1: %.4f" % (test_pre, test_rec, test_f1))
