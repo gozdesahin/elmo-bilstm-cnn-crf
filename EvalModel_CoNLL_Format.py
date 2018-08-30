@@ -16,7 +16,7 @@ if len(sys.argv) < 3:
 
 modelPath = sys.argv[1]
 inputPath = sys.argv[2]
-inputColumns = {0: "tokens"}
+inputColumns = {0: "tokens", 1:'POS', 2:'chunk_BIO'}
 
 # :: Load the model ::
 lstmModel = ELMoBiLSTM.loadModel(modelPath)
@@ -33,7 +33,6 @@ dataMatrix = createMatrices(sentences, lstmModel.mappings, True)
 embLookup = lstmModel.embeddingsLookup
 embLookup.elmo_cuda_device = 0         #Cuda device for pytorch - elmo embedding, -1 for CPU
 addEmbeddings(dataMatrix, embLookup.sentenceLookup)
-
 
 # :: Tag the input ::
 tags = lstmModel.tagSentences(dataMatrix)

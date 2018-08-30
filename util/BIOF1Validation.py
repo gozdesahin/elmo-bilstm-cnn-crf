@@ -62,7 +62,7 @@ def compute_f1(predictions, correct, idx2Label, correctBIOErrors='No', encodingS
         convertIOBtoBIO(label_correct)
             
                     
-    
+
           
     checkBIOEncoding(label_pred, correctBIOErrors)
 
@@ -112,7 +112,7 @@ def compute_precision(guessed_sentences, correct_sentences):
     for sentenceIdx in range(len(guessed_sentences)):
         guessed = guessed_sentences[sentenceIdx]
         correct = correct_sentences[sentenceIdx]
-        print("%d - %d" % (len(guessed), len(correct)))
+
         assert(len(guessed) == len(correct))
         idx = 0
         while idx < len(guessed):
