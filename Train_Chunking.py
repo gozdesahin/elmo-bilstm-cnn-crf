@@ -33,7 +33,7 @@ logger.addHandler(ch)
 #
 ######################################################
 datasets = {
-    'conll2000_data/clean':                                   #Name of the dataset
+    'conll2000_data/perturbed/03':                                   #Name of the dataset
         {'columns': {0:'tokens', 1:'POS', 2:'chunk_BIO'},   #CoNLL format for the input data. Column 0 contains tokens, column 1 contains POS and column 2 contains chunk information using BIO encoding
          'label': 'chunk_BIO',                              #Which column we like to predict
          'evaluate': True,                                  #Should we evaluate on this task? Set true always for single task setups
