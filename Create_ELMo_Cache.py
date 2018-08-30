@@ -13,8 +13,8 @@ datasetName = sys.argv[1]
 tokenColId = int(sys.argv[2])
 cudaDevice = int(sys.argv[3]) if len(sys.argv) >= 4 else -1
 
-elmo_options_file= '../pretrained/elmo_2x4096_512_2048cnn_2xhighway_5.5B_options.json'
-elmo_weight_file = '../pretrained/elmo_2x4096_512_2048cnn_2xhighway_5.5B_weights.hdf5'
+elmo_options_file= 'pretrained/elmo_2x4096_512_2048cnn_2xhighway_5.5B_options.json'
+elmo_weight_file = 'pretrained/elmo_2x4096_512_2048cnn_2xhighway_5.5B_weights.hdf5'
 
 # :: Logging level ::
 loggingLevel = logging.INFO
