@@ -45,8 +45,8 @@ datasets = {
 
 # :: Prepares the dataset to be used with the LSTM-network. Creates and stores cPickle files in the pkl/ folder ::
 embeddings_file = None
-elmo_options_file= '../pretrained/elmo_2x4096_512_2048cnn_2xhighway_5.5B_options.json'
-elmo_weight_file = '../pretrained/elmo_2x4096_512_2048cnn_2xhighway_5.5B_weights.hdf5'
+elmo_options_file= 'pretrained/elmo_2x4096_512_2048cnn_2xhighway_5.5B_options.json'
+elmo_weight_file = 'pretrained/elmo_2x4096_512_2048cnn_2xhighway_5.5B_weights.hdf5'
 elmo_mode = 'weighted_average'
 elmo_cuda_device = 0 #Which GPU to use. -1 for CPU
 
