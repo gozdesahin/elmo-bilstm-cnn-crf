@@ -90,7 +90,7 @@ def convertIOBtoBIO(dataset):
             prevVal = sentence[pos]
 
 def convertIOBEStoBIO(dataset):
-    """ Convert inplace IOBES encoding to BIO encoding """    
+    """ Convert inplace IOBES encoding to BIO encoding """
     for sentence in dataset:
         for pos in range(len(sentence)):
             firstChar = sentence[pos][0]
@@ -112,7 +112,7 @@ def compute_precision(guessed_sentences, correct_sentences):
     for sentenceIdx in range(len(guessed_sentences)):
         guessed = guessed_sentences[sentenceIdx]
         correct = correct_sentences[sentenceIdx]
-        
+        logging.info("Guessed-length: %d, Correct-length: %d" % (len(guessed),len(correct)))
         
         assert(len(guessed) == len(correct))
         idx = 0
