@@ -8,7 +8,6 @@ import sys
 from util.preprocessing import addCharInformation, createMatrices, addCasingInformation, addEmbeddings, readCoNLL
 from neuralnets.ELMoBiLSTM import ELMoBiLSTM
 from neuralnets.ELMoWordEmbeddings import ELMoWordEmbeddings
-import logging
 
 if len(sys.argv) < 3:
     print("Usage: python RunModel_CoNLL_Format.py modelPath inputPathToConllFile")
@@ -38,4 +37,4 @@ addEmbeddings(dataMatrix, embLookup.sentenceLookup)
 tags = lstmModel.tagSentences(dataMatrix)
 
 test_pre, test_rec, test_f1 = lstmModel.computeF1('conll2000_data/clean',dataMatrix)
-logging.info("Test-Data: Prec: %.3f, Rec: %.3f, F1: %.4f" % (test_pre, test_rec, test_f1))
+print("Test-Data: Prec: %.3f, Rec: %.3f, F1: %.4f" % (test_pre, test_rec, test_f1))
