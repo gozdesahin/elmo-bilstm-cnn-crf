@@ -33,7 +33,7 @@ dataMatrix = createMatrices(sentences, lstmModel.mappings, True)
 
 # :: Perform the word embedding / ELMo embedding lookup ::
 embLookup = lstmModel.embeddingsLookup
-embLookup.elmo_cuda_device = -1         #Cuda device for pytorch - elmo embedding, -1 for CPU
+embLookup.elmo_cuda_device = 0         #Cuda device for pytorch - elmo embedding, -1 for CPU
 addEmbeddings(dataMatrix, embLookup.sentenceLookup)
 
 
