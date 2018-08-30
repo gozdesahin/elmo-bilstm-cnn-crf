@@ -112,8 +112,7 @@ def compute_precision(guessed_sentences, correct_sentences):
     for sentenceIdx in range(len(guessed_sentences)):
         guessed = guessed_sentences[sentenceIdx]
         correct = correct_sentences[sentenceIdx]
-        logging.info("Guessed-length: %d, Correct-length: %d" % (len(guessed),len(correct)))
-        
+        print("%d - %d" % (len(guessed), len(correct)))
         assert(len(guessed) == len(correct))
         idx = 0
         while idx < len(guessed):
