@@ -8,7 +8,7 @@ import sys
 from util.preprocessing import addCharInformation, createMatrices, addCasingInformation, addEmbeddings, readCoNLL
 from neuralnets.ELMoBiLSTM import ELMoBiLSTM
 from neuralnets.ELMoWordEmbeddings import ELMoWordEmbeddings
-
+import logging
 
 if len(sys.argv) < 3:
     print("Usage: python RunModel_CoNLL_Format.py modelPath inputPathToConllFile")
