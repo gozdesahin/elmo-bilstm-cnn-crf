@@ -52,7 +52,7 @@ elmo_cuda_device = 0 #Which GPU to use. -1 for CPU
 
 embLookup = ELMoWordEmbeddings(embeddings_file, elmo_options_file, elmo_weight_file, elmo_mode, elmo_cuda_device)
 # You can use a cache to precompute the ELMo embeddings once. See Create_ELMo_Cache.py for an example.
-embLookup.loadCache('embeddings/elmo_cache_conll2000_data_clean.pkl')
+embLookup.loadCache('embeddings/elmo_cache_conll2000_data_perturbed_03.pkl')
 
 pickleFile = perpareDataset(datasets, embLookup)
 
