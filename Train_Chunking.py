@@ -33,7 +33,7 @@ logger.addHandler(ch)
 #
 ######################################################
 datasets = {
-    'conll2000_data/perturbed/03':                                   #Name of the dataset
+    'conll2000_data/clean':                                   #Name of the dataset
         {'columns': {0:'tokens', 1:'POS', 2:'chunk_BIO'},   #CoNLL format for the input data. Column 0 contains tokens, column 1 contains POS and column 2 contains chunk information using BIO encoding
          'label': 'chunk_BIO',                              #Which column we like to predict
          'evaluate': True,                                  #Should we evaluate on this task? Set true always for single task setups
@@ -45,14 +45,17 @@ datasets = {
 
 # :: Prepares the dataset to be used with the LSTM-network. Creates and stores cPickle files in the pkl/ folder ::
 embeddings_file = None
-elmo_options_file= 'pretrained/elmo_2x4096_512_2048cnn_2xhighway_5.5B_options.json'
-elmo_weight_file = 'pretrained/elmo_2x4096_512_2048cnn_2xhighway_5.5B_weights.hdf5'
+#elmo_options_file= 'pretrained/elmo_2x4096_512_2048cnn_2xhighway_5.5B_options.json'
+#elmo_weight_file = 'pretrained/elmo_2x4096_512_2048cnn_2xhighway_5.5B_weights.hdf5'
+elmo_options_file= 'pretrained/velmo_options.json'
+elmo_weight_file = 'pretrained/velmo_weights.hdf5'
+
 elmo_mode = 'weighted_average'
 elmo_cuda_device = 0 #Which GPU to use. -1 for CPU
 
 embLookup = ELMoWordEmbeddings(embeddings_file, elmo_options_file, elmo_weight_file, elmo_mode, elmo_cuda_device)
 # You can use a cache to precompute the ELMo embeddings once. See Create_ELMo_Cache.py for an example.
-embLookup.loadCache('embeddings/elmo_cache_conll2000_data_perturbed_03.pkl')
+embLookup.loadCache('embeddings/velmo_cache_conll2000_data_clean.pkl')
 
 pickleFile = perpareDataset(datasets, embLookup)
 
