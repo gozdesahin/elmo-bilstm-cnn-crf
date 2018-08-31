@@ -85,7 +85,6 @@ def addCharInformation(sentences):
         for tokenIdx in range(len(sentences[sentenceIdx]['tokens'])):
             token = sentences[sentenceIdx]['tokens'][tokenIdx]
             chars = [c for c in token]
-            print(chars)
             sentences[sentenceIdx]['characters'].append(chars)
 
 def addCasingInformation(sentences):
@@ -132,12 +131,14 @@ def createMatrices(sentences, mappings, padOneTokenSentence):
     data = []
     for sentence in sentences:
         row = {name: [] for name in list(mappings.keys())}
-        
+        print("debug1")
         for mapping, str2Idx in mappings.items():    
+            print("debug2")
             if mapping not in sentence:
                 continue
-                    
+            print("debug3")
             for entry in sentence[mapping]:                
+                print("debug4")
                 if mapping.lower() == 'tokens':
                     idx = entry
                 elif mapping.lower() == 'characters':  
@@ -165,7 +166,7 @@ def createMatrices(sentences, mappings, padOneTokenSentence):
                     row[mapping].append(0)
 
         data.append(row)
-
+    print("Data length: %d" % (len(data)))
     return data
     
   
