@@ -37,7 +37,8 @@ columns = {tokenColId: 'tokens'}
 
 #picklePath = "embeddings/elmo_cache_" + datasetName + ".pkl"
 
-picklePath = "embeddings/velmo_cache_conll2000_data_perturbed_03.pkl"
+#picklePath = "embeddings/velmo_cache_conll2000_data_perturbed_03.pkl"
+picklePath = "embeddings/velmo_cache_conll2000_data_clean.pkl"
 embLookup = ELMoWordEmbeddings(None, elmo_options_file, elmo_weight_file, elmo_cuda_device=cudaDevice)
 
 print("ELMo Cache Generation")
