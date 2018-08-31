@@ -10,7 +10,7 @@ from neuralnets.ELMoBiLSTM import ELMoBiLSTM
 from neuralnets.ELMoWordEmbeddings import ELMoWordEmbeddings
 
 if len(sys.argv) < 3:
-    print("Usage: python RunModel_CoNLL_Format.py modelPath inputPathToConllFile")
+    print("Usage: python EvalModel_CoNLL_Format.py modelPath inputPathToConllFile")
     exit()
 
 modelPath = sys.argv[1]
@@ -30,17 +30,17 @@ dataMatrix = createMatrices(sentences, lstmModel.mappings, True)
 
 # :: Perform the word embedding / ELMo embedding lookup ::
 embLookup = lstmModel.embeddingsLookup
-embLookup.elmo_cuda_device = 0         #Cuda device for pytorch - elmo embedding, -1 for CPU
+embLookup.elmo_cuda_device = 1         #Cuda device for pytorch - elmo embedding, -1 for CPU
 addEmbeddings(dataMatrix, embLookup.sentenceLookup)
 
 # :: Tag the input ::
 tags = lstmModel.tagSentences(dataMatrix)
 
 # Evaluation of Chunking
-#test_pre, test_rec, test_f1 = lstmModel.computeF1('conll2000_data/clean',dataMatrix)
-#print("Test-Data: Prec: %.3f, Rec: %.3f, F1: %.4f" % (test_pre, test_rec, test_f1))
+test_pre, test_rec, test_f1 = lstmModel.computeF1('conll2000_data/clean',dataMatrix)
+print("Test-Data: Prec: %.3f, Rec: %.3f, F1: %.4f" % (test_pre, test_rec, test_f1))
 
 # Evaluation of POS tagging
-test_acc = lstmModel.computeAcc('conll2000_data/perturbed/03',dataMatrix)
-print("Test-Data: Accuracy: %.3f" % (test_acc))
+#test_acc = lstmModel.computeAcc('conll2000_data/perturbed/03',dataMatrix)
+#print("Test-Data: Accuracy: %.3f" % (test_acc))
 
