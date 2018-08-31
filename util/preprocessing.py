@@ -85,6 +85,7 @@ def addCharInformation(sentences):
         for tokenIdx in range(len(sentences[sentenceIdx]['tokens'])):
             token = sentences[sentenceIdx]['tokens'][tokenIdx]
             chars = [c for c in token]
+            print(chars)
             sentences[sentenceIdx]['characters'].append(chars)
 
 def addCasingInformation(sentences):
