@@ -34,7 +34,7 @@ embLookup.elmo_cuda_device = 1         #Cuda device for pytorch - elmo embedding
 addEmbeddings(dataMatrix, embLookup.sentenceLookup)
 
 # :: Tag the input ::
-tags = lstmModel.tagSentences(dataMatrix)
+#tags = lstmModel.tagSentences(dataMatrix)
 
 # Evaluation of Chunking
 test_pre, test_rec, test_f1 = lstmModel.computeF1('conll2000_data/clean',dataMatrix)
