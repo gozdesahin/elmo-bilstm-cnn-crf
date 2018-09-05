@@ -53,7 +53,8 @@ elmo_weight_file = 'pretrained/velmo_weights.hdf5'
 elmo_mode = 'weighted_average'
 elmo_cuda_device = 0 #Which GPU to use. -1 for CPU
 
-embLookup = ELMoWordEmbeddings(embeddings_file, elmo_options_file, elmo_weight_file, elmo_mode, elmo_cuda_device)
+embLookup = ELMoWordEmbeddings(None, elmo_options_file, elmo_weight_file, elmo_cuda_device)
+
 # You can use a cache to precompute the ELMo embeddings once. See Create_ELMo_Cache.py for an example.
 embLookup.loadCache('embeddings/velmo_cache_conll2000_data_clean.pkl')
 

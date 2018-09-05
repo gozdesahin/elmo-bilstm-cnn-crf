@@ -131,14 +131,10 @@ def createMatrices(sentences, mappings, padOneTokenSentence):
     data = []
     for sentence in sentences:
         row = {name: [] for name in list(mappings.keys())}
-        print("debug1")
-        for mapping, str2Idx in mappings.items():    
-            print("debug2")
+        for mapping, str2Idx in mappings.items():
             if mapping not in sentence:
                 continue
-            print("debug3")
-            for entry in sentence[mapping]:                
-                print("debug4")
+            for entry in sentence[mapping]:
                 if mapping.lower() == 'tokens':
                     idx = entry
                 elif mapping.lower() == 'characters':  
