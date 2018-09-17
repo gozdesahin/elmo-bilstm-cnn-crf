@@ -18,9 +18,12 @@ python Create_ELMo_Cache.py -datasetName $DATASET \
 mkdir results
 mkdir results/pos
 mkdir pkl/conll2000_data
+
 # Do it 5 times
-for RUN in {1..5}
+for id in 1 2 3 4 5
 do
+    # remove previous models for clean training
+    rm models/conll2000_data/*
 	echo "Train a POS tagger"
 	# (2) Train and test a POS tagger
 	python Train_POS.py -datasetName $DATASET \
@@ -33,70 +36,70 @@ do
 	echo "Test on clean data"
 	python EvalModel_CoNLL_Format.py -datasetName $DATASET \
 	-testFile 'data/conll2000_data/clean/test.txt' \
-	-testSetting 'CTCT_'$RUN'.txt' \
+	-testSetting 'CTCT_'$id'.txt' \
 	-cuda_device 0 \
 	-task 'pos'
 
 	echo "Test on p=0,1"
 	python EvalModel_CoNLL_Format.py -datasetName $DATASET \
 	-testFile 'data/conll2000_data/perturbed/01/test.txt' \
-	-testSetting 'CTP01_'$RUN'.txt' \
+	-testSetting 'CTP01_'$id'.txt' \
 	-cuda_device 0 \
 	-task 'pos'
 
 	echo "Test on p=0,2"
 	python EvalModel_CoNLL_Format.py -datasetName $DATASET \
 	-testFile 'data/conll2000_data/perturbed/02/test.txt' \
-	-testSetting 'CTP02_'$RUN'.txt' \
+	-testSetting 'CTP02_'$id'.txt' \
 	-cuda_device 0 \
 	-task 'pos'
 
 	echo "Test on p=0,3"
 	python EvalModel_CoNLL_Format.py -datasetName $DATASET \
 	-testFile 'data/conll2000_data/perturbed/03/test.txt' \
-	-testSetting 'CTP03_'$RUN'.txt' \
+	-testSetting 'CTP03_'$id'.txt' \
 	-cuda_device 0 \
 	-task 'pos'
 
 	echo "Test on p=0,4"
 	python EvalModel_CoNLL_Format.py -datasetName $DATASET \
 	-testFile 'data/conll2000_data/perturbed/04/test.txt' \
-	-testSetting 'CTP04_'$RUN'.txt' \
+	-testSetting 'CTP04_'$id'.txt' \
 	-cuda_device 0 \
 	-task 'pos'
 
 	echo "Test on p=0,5"
 	python EvalModel_CoNLL_Format.py -datasetName $DATASET \
 	-testFile 'data/conll2000_data/perturbed/05/test.txt' \
-	-testSetting 'CTP05_'$RUN'.txt' \
+	-testSetting 'CTP05_'$id'.txt' \
 	-cuda_device 0 \
 	-task 'pos'
 
 	echo "Test on p=0,6"
 	python EvalModel_CoNLL_Format.py -datasetName $DATASET \
 	-testFile 'data/conll2000_data/perturbed/06/test.txt' \
-	-testSetting 'CTP06_'$RUN'.txt' \
+	-testSetting 'CTP06_'$id'.txt' \
 	-cuda_device 0 \
 	-task 'pos'
 
 	echo "Test on p=0,7"
 	python EvalModel_CoNLL_Format.py -datasetName $DATASET \
 	-testFile 'data/conll2000_data/perturbed/07/test.txt' \
-	-testSetting 'CTP07_'$RUN'.txt' \
+	-testSetting 'CTP07_'$id'.txt' \
 	-cuda_device 0 \
 	-task 'pos'
 
 	echo "Test on p=0,8"
 	python EvalModel_CoNLL_Format.py -datasetName $DATASET \
 	-testFile 'data/conll2000_data/perturbed/08/test.txt' \
-	-testSetting 'CTP08_'$RUN'.txt' \
+	-testSetting 'CTP08_'$id'.txt' \
 	-cuda_device 0 \
 	-task 'pos'
 
 	echo "Test on p=0,9"
 	python EvalModel_CoNLL_Format.py -datasetName $DATASET \
 	-testFile 'data/conll2000_data/perturbed/09/test.txt' \
-	-testSetting 'CTP09_'$RUN'.txt' \
+	-testSetting 'CTP09_'$id'.txt' \
 	-cuda_device 0 \
 	-task 'pos'
 done 
