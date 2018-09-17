@@ -27,7 +27,7 @@ def remove_except_last_model(save_dir, modelinit):
     laste = nexte
     for file in os.listdir(save_dir):
         if file.endswith(".h5") and file.__contains__("_"):
-            ce = int(file.split('-')[1][:-3])+1
+            ce = int(file.split('_')[1][:-3])+1
             if ce<laste:
                 model_name = file
                 full_path = os.path.join(save_dir, model_name)
