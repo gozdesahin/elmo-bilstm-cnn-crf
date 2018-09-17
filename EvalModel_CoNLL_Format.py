@@ -10,6 +10,7 @@ from neuralnets.ELMoBiLSTM import ELMoBiLSTM
 from neuralnets.ELMoWordEmbeddings import ELMoWordEmbeddings
 import argparse
 from util.postprocessing import get_last_model_path
+import os
 
 
 def main():
