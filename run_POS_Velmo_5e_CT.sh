@@ -17,7 +17,7 @@ python Create_ELMo_Cache.py -datasetName $DATASET \
 
 mkdir results
 mkdir results/pos
-
+mkdir pkl/conll2000_data
 # Do it 5 times
 for RUN in {1..5}
 do
