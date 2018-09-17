@@ -29,6 +29,7 @@ def evaluate(args):
     save_dir, model_init = os.path.split(fpath)
 
     modelPath, _ = get_last_model_path(save_dir, model_init)
+    print(modelPath)
     inputPath = args.testFile
     inputColumns = {0: "tokens", 1:'POS', 2:'chunk_BIO'}
 

@@ -90,7 +90,7 @@ def train_pos(args):
     model.setMappings(mappings)
     model.setDataset(datasets, data)
     model.modelSavePath = "models/[ModelName]_[Epoch].h5"
-    model.fit(epochs=5)
+    model.fit(epochs=3)
 
 
     fpath = 'models/'+args.datasetName+'_1.h5'
