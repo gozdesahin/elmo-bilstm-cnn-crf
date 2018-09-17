@@ -3,7 +3,8 @@ echo 'Clean Training Performed'
 DATASET='conll2000_data/clean'
 # (0) Remove previous caches and embeddings
 echo "Remove cached embeddings"
-rm ./embeddings/velmo_cache_conll2000_data_clean.pkl
+rm embeddings/velmo_cache_conll2000_data_clean.pkl
+rm -r pkl/
 
 echo "Create new cached embeddings"
 # (1) Create cache for VELMO embeddings for clean data
