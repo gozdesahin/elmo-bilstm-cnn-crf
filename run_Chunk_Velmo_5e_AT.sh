@@ -1,6 +1,6 @@
 #!/bin/bash
-echo 'Clean Training Performed'
-DATASET='conll2000_data/clean'
+echo 'Adversarial Training Performed'
+DATASET='conll2000_data/perturbed/02'
 # (0) Remove previous caches and embeddings
 echo "Remove cached embeddings"
 rm embeddings/velmo_cache_conll2000_data_perturbed_02.pkl
