@@ -66,9 +66,9 @@ def train_pos(args):
     #elmo_options_file= 'pretrained/elmo_2x4096_512_2048cnn_2xhighway_5.5B_options.json'
     #elmo_weight_file = 'pretrained/elmo_2x4096_512_2048cnn_2xhighway_5.5B_weights.hdf5'
 
-    elmo_cuda_device = args.cuda_device #Which GPU to use. -1 for CPU
+    cudaDevice = args.cuda_device #Which GPU to use. -1 for CPU
 
-    embLookup = ELMoWordEmbeddings(embeddings_file, elmo_options_file, elmo_weight_file, elmo_mode, elmo_cuda_device)
+    embLookup = ELMoWordEmbeddings(embeddings_file, elmo_options_file, elmo_weight_file, elmo_mode, elmo_cuda_device=cudaDevice)
     # You can use a cache to precompute the ELMo embeddings once. See Create_ELMo_Cache.py for an example.
     embLookup.loadCache(args.pkl_path)
 
