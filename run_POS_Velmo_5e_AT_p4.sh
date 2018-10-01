@@ -39,112 +39,112 @@ do
 	echo "Test on clean data"
 	python EvalModel_CoNLL_Format.py -datasetName $DATASET \
 	-testFile 'data/conll2000_data/clean/test.txt' \
-	-testSetting 'ATCT_'$id'.txt' \
+	-testSetting 'VATCT_'$id'.txt' \
 	-cuda_device 1 \
 	-task 'pos'
 
 	echo "Test on p=0,1 org"
 	python EvalModel_CoNLL_Format.py -datasetName $DATASET \
 	-testFile 'data/conll2000_data/perturbed/01/test_org.txt' \
-	-testSetting 'ATP01_org_'$id'.txt' \
+	-testSetting 'VATP01_org_'$id'.txt' \
 	-cuda_device 1 \
 	-task 'pos'
 
 	echo "Test on p=0,1 ood"
 	python EvalModel_CoNLL_Format.py -datasetName $DATASET \
 	-testFile 'data/conll2000_data/perturbed/01/test_ood.txt' \
-	-testSetting 'ATP01_ood_'$id'.txt' \
+	-testSetting 'VATP01_ood_'$id'.txt' \
 	-cuda_device 1 \
 	-task 'pos'
 
 	echo "Test on p=0,2 org"
 	python EvalModel_CoNLL_Format.py -datasetName $DATASET \
 	-testFile 'data/conll2000_data/perturbed/02/test_org.txt' \
-	-testSetting 'ATP02_org_'$id'.txt' \
+	-testSetting 'VATP02_org_'$id'.txt' \
 	-cuda_device 1 \
 	-task 'pos'
 
 	echo "Test on p=0,2 ood"
 	python EvalModel_CoNLL_Format.py -datasetName $DATASET \
 	-testFile 'data/conll2000_data/perturbed/02/test_ood.txt' \
-	-testSetting 'ATP02_ood_'$id'.txt' \
+	-testSetting 'VATP02_ood_'$id'.txt' \
 	-cuda_device 1 \
 	-task 'pos'
 
 	echo "Test on p=0,3 org"
 	python EvalModel_CoNLL_Format.py -datasetName $DATASET \
 	-testFile 'data/conll2000_data/perturbed/03/test_org.txt' \
-	-testSetting 'ATP03_org_'$id'.txt' \
+	-testSetting 'VATP03_org_'$id'.txt' \
 	-cuda_device 1 \
 	-task 'pos'
 
 	echo "Test on p=0,3 ood"
 	python EvalModel_CoNLL_Format.py -datasetName $DATASET \
 	-testFile 'data/conll2000_data/perturbed/03/test_ood.txt' \
-	-testSetting 'ATP03_ood_'$id'.txt' \
+	-testSetting 'VATP03_ood_'$id'.txt' \
 	-cuda_device 1 \
 	-task 'pos'
 
 	echo "Test on p=0,4 org"
 	python EvalModel_CoNLL_Format.py -datasetName $DATASET \
 	-testFile 'data/conll2000_data/perturbed/04/test_org.txt' \
-	-testSetting 'ATP04_org_'$id'.txt' \
+	-testSetting 'VATP04_org_'$id'.txt' \
 	-cuda_device 1 \
 	-task 'pos'
 
 	echo "Test on p=0,4 ood"
 	python EvalModel_CoNLL_Format.py -datasetName $DATASET \
 	-testFile 'data/conll2000_data/perturbed/04/test_ood.txt' \
-	-testSetting 'ATP04_ood_'$id'.txt' \
+	-testSetting 'VATP04_ood_'$id'.txt' \
 	-cuda_device 1 \
 	-task 'pos'
 
 	echo "Test on p=0,5 org"
 	python EvalModel_CoNLL_Format.py -datasetName $DATASET \
 	-testFile 'data/conll2000_data/perturbed/05/test_org.txt' \
-	-testSetting 'ATP05_org_'$id'.txt' \
+	-testSetting 'VATP05_org_'$id'.txt' \
 	-cuda_device 1 \
 	-task 'pos'
 	
 	echo "Test on p=0,5 ood"
 	python EvalModel_CoNLL_Format.py -datasetName $DATASET \
 	-testFile 'data/conll2000_data/perturbed/05/test_ood.txt' \
-	-testSetting 'ATP05_ood_'$id'.txt' \
+	-testSetting 'VATP05_ood_'$id'.txt' \
 	-cuda_device 1 \
 	-task 'pos'
 
 	echo "Test on p=0,6 org"
 	python EvalModel_CoNLL_Format.py -datasetName $DATASET \
 	-testFile 'data/conll2000_data/perturbed/06/test_org.txt' \
-	-testSetting 'ATP06_org_'$id'.txt' \
+	-testSetting 'VATP06_org_'$id'.txt' \
 	-cuda_device 1 \
 	-task 'pos'
 
 	echo "Test on p=0,6 ood"
 	python EvalModel_CoNLL_Format.py -datasetName $DATASET \
 	-testFile 'data/conll2000_data/perturbed/06/test_ood.txt' \
-	-testSetting 'ATP06_ood_'$id'.txt' \
+	-testSetting 'VATP06_ood_'$id'.txt' \
 	-cuda_device 1 \
 	-task 'pos'
 
 	echo "Test on p=0,7 org"
 	python EvalModel_CoNLL_Format.py -datasetName $DATASET \
 	-testFile 'data/conll2000_data/perturbed/07/test_org.txt' \
-	-testSetting 'ATP07_org_'$id'.txt' \
+	-testSetting 'VATP07_org_'$id'.txt' \
 	-cuda_device 1 \
 	-task 'pos'
 
 	echo "Test on p=0,7 ood"
 	python EvalModel_CoNLL_Format.py -datasetName $DATASET \
 	-testFile 'data/conll2000_data/perturbed/07/test_ood.txt' \
-	-testSetting 'ATP07_ood_'$id'.txt' \
+	-testSetting 'VATP07_ood_'$id'.txt' \
 	-cuda_device 1 \
 	-task 'pos'
 
 	echo "Test on p=0,8 org"
 	python EvalModel_CoNLL_Format.py -datasetName $DATASET \
 	-testFile 'data/conll2000_data/perturbed/08/test_org.txt' \
-	-testSetting 'ATP08_org_'$id'.txt' \
+	-testSetting 'VATP08_org_'$id'.txt' \
 	-cuda_device 1 \
 	-task 'pos'
 
@@ -152,21 +152,21 @@ do
 	echo "Test on p=0,8 ood"
 	python EvalModel_CoNLL_Format.py -datasetName $DATASET \
 	-testFile 'data/conll2000_data/perturbed/08/test_ood.txt' \
-	-testSetting 'ATP08_ood_'$id'.txt' \
+	-testSetting 'VATP08_ood_'$id'.txt' \
 	-cuda_device 1 \
 	-task 'pos'
 
 	echo "Test on p=0,9 org"
 	python EvalModel_CoNLL_Format.py -datasetName $DATASET \
 	-testFile 'data/conll2000_data/perturbed/09/test_org.txt' \
-	-testSetting 'ATP09_org_'$id'.txt' \
+	-testSetting 'VATP09_org_'$id'.txt' \
 	-cuda_device 1 \
 	-task 'pos'
 
 	echo "Test on p=0,9 ood"
 	python EvalModel_CoNLL_Format.py -datasetName $DATASET \
 	-testFile 'data/conll2000_data/perturbed/09/test_ood.txt' \
-	-testSetting 'ATP09_ood_'$id'.txt' \
+	-testSetting 'VATP09_ood_'$id'.txt' \
 	-cuda_device 1 \
 	-task 'pos'
 done 
