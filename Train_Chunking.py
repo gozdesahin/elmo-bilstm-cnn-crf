@@ -39,6 +39,8 @@ def main():
     parser.add_argument('-elmo_options', type=str, default='pretrained/velmo_options.json', help='ELMO options file path')
     parser.add_argument('-elmo_weights', type=str, default='pretrained/velmo_weights.hdf5', help='ELMO weights file path')
     parser.add_argument('-pkl_path', type=str, default='embeddings/velmo_cache_conll2000_data_clean.pkl', help='path to save the cache file')
+    parser.add_argument('-model_save', type=str, default='models', help='path to save the model file')
+
     args = parser.parse_args()
     train_pos(args)
 
@@ -89,11 +91,13 @@ def train_pos(args):
     model = ELMoBiLSTM(embLookup, params)
     model.setMappings(mappings)
     model.setDataset(datasets, data)
-    model.modelSavePath = "models/[ModelName]_[Epoch].h5"
+    #model.modelSavePath = "models/[ModelName]_[Epoch].h5"
+    model.modelSavePath = args.model_save + "/[ModelName]_[Epoch].h5"
     model.fit(epochs=25)
 
 
-    fpath = 'models/'+args.datasetName+'_1.h5'
+    #fpath = 'models/'+args.datasetName+'_1.h5'
+    fpath = args.model_save + '/' + args.datasetName + '_1.h5'
     save_dir, model_init = os.path.split(fpath)
     print(save_dir)
     print (model_init)

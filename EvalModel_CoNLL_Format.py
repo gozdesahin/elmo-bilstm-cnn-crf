@@ -18,6 +18,8 @@ def main():
     parser.add_argument('-datasetName', type=str, default='conll2000_data/clean', help='necessary to find the model path')
     parser.add_argument('-testFile', type=str, default='data/conll2000_data/clean/test.txt', help='conll file to test')
     parser.add_argument('-testSetting', type=str, default='CT1.txt', help='conll file to test')
+    parser.add_argument('-model_save', type=str, default='models', help='path to save the model file')
+    parser.add_argument('-result_save', type=str, default='results', help='path to save the results file')
     parser.add_argument('-cuda_device', type=int, default=0, help='cpu:-1, others: gpu')
     parser.add_argument('-task', type=str, default='pos', help='pos|chunking')
     args = parser.parse_args()
@@ -25,7 +27,8 @@ def main():
 
 
 def evaluate(args):
-    fpath = 'models/'+args.datasetName+'_1.h5'
+    fpath = args.model_save + '/' + args.datasetName + '_1.h5'
+    #fpath = 'models/'+args.datasetName+'_1.h5'
     save_dir, model_init = os.path.split(fpath)
 
     modelPath, _ = get_last_model_path(save_dir, model_init)
@@ -33,7 +36,7 @@ def evaluate(args):
     inputPath = args.testFile
     inputColumns = {0: "tokens", 1:'POS', 2:'chunk_BIO'}
 
-    resfpath = 'results/'+args.task+'/'+args.testSetting
+    resfpath = args.result_save +'/'+args.task+'/'+args.testSetting
     resfile = open(resfpath, 'w')
 
     # :: Load the model ::
