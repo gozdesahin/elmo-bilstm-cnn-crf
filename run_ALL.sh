@@ -5,9 +5,9 @@ RESULT='selmo_5e_ct_results'
 MODEL='selmo_5e_ct_pos_models'
 
 # (0) Remove previous caches and embeddings
-#echo "Remove cached embeddings"
-#rm embeddings/elmo_cache_conll2000_data_clean.pkl
-#rm -r pkl/*
+echo "Remove cached embeddings"
+rm embeddings/elmo_cache_conll2000_data_clean.pkl
+rm -r pkl/*
 
 echo "Create new cached embeddings"
 # (1) Create cache for ELMO embeddings for clean data
@@ -22,6 +22,8 @@ mkdir $RESULT
 mkdir $RESULT/pos
 mkdir pkl/conll2000_data
 
+mkdir $MODEL
+mkdir $MODEL/conll2000_data
 # Do it 10 times
 for id in 1 2 3 4 5
 do
@@ -379,9 +381,9 @@ RESULT='selmo_5e_at_results'
 MODEL='selmo_5e_at_pos_models'
 
 # (0) Remove previous caches and embeddings
-#echo "Remove cached embeddings"
-#rm embeddings/elmo_cache_conll2000_data_perturbed_02.pkl
-#rm -r pkl/conll2000_data/perturbed
+echo "Remove cached embeddings"
+rm embeddings/elmo_cache_conll2000_data_perturbed_02.pkl
+rm -r pkl/conll2000_data/perturbed
 
 echo "Create new cached embeddings"
 # (1) Create cache for VELMO embeddings for clean data
@@ -397,6 +399,8 @@ mkdir $RESULT/pos
 mkdir pkl/conll2000_data
 mkdir pkl/conll2000_data/perturbed
 mkdir pkl/conll2000_data/perturbed/02
+mkdir $MODEL
+mkdir $MODEL/conll2000_data
 mkdir $MODEL/conll2000_data/perturbed
 mkdir $MODEL/conll2000_data/perturbed/02
 
@@ -757,9 +761,9 @@ RESULT='selmo_5e_ct_results'
 MODEL='selmo_5e_ct_chunk_models'
 
 # (0) Remove previous caches and embeddings
-#echo "Remove cached embeddings"
-#rm embeddings/elmo_cache_conll2000_data_clean.pkl
-#rm -r pkl/*
+echo "Remove cached embeddings"
+rm embeddings/elmo_cache_conll2000_data_clean.pkl
+rm -r pkl/*
 
 echo "Create new cached embeddings"
 # (1) Create cache for VELMO embeddings for clean data
@@ -773,7 +777,8 @@ python Create_ELMo_Cache.py -datasetName $DATASET \
 mkdir $RESULT
 mkdir $RESULT/chunking
 mkdir pkl/conll2000_data
-
+mkdir $MODEL
+mkdir $MODEL/conll2000_data
 # Do it 10 times
 for id in 1 2 3 4 5
 do
@@ -1131,9 +1136,9 @@ RESULT='selmo_5e_at_results'
 MODEL='selmo_5e_at_chunk_models'
 
 # (0) Remove previous caches and embeddings
-#echo "Remove cached embeddings"
-#rm embeddings/elmo_cache_conll2000_data_perturbed_02.pkl
-#rm -r pkl/conll2000_data/perturbed
+echo "Remove cached embeddings"
+rm embeddings/elmo_cache_conll2000_data_perturbed_02.pkl
+rm -r pkl/conll2000_data/perturbed
 
 echo "Create new cached embeddings"
 # (1) Create cache for VELMO embeddings for clean data
@@ -1149,6 +1154,8 @@ mkdir $RESULT/chunking
 mkdir pkl/conll2000_data
 mkdir pkl/conll2000_data/perturbed
 mkdir pkl/conll2000_data/perturbed/02
+mkdir $MODEL
+mkdir $MODEL/conll2000_data
 mkdir $MODEL/conll2000_data/perturbed
 mkdir $MODEL/conll2000_data/perturbed/02
 
@@ -1509,9 +1516,9 @@ RESULT='velmo_5e_ct_results'
 MODEL='velmo_5e_ct_pos_models'
 
 # (0) Remove previous caches and embeddings
-#echo "Remove cached embeddings"
-#rm embeddings/elmo_cache_conll2000_data_clean.pkl
-#rm -r pkl/*
+echo "Remove cached embeddings"
+rm embeddings/elmo_cache_conll2000_data_clean.pkl
+rm -r pkl/*
 
 echo "Create new cached embeddings"
 # (1) Create cache for VELMO embeddings for clean data
@@ -1525,6 +1532,8 @@ python Create_ELMo_Cache.py -datasetName $DATASET \
 mkdir $RESULT
 mkdir $RESULT/pos
 mkdir pkl/conll2000_data
+mkdir $MODEL
+mkdir $MODEL/conll2000_data
 
 # Do it 10 times
 for id in 1 2 3 4 5
@@ -1883,9 +1892,9 @@ RESULT='velmo_5e_at_results'
 MODEL='velmo_5e_at_pos_models'
 
 # (0) Remove previous caches and embeddings
-#echo "Remove cached embeddings"
-#rm embeddings/elmo_cache_conll2000_data_perturbed_02.pkl
-#rm -r pkl/conll2000_data/perturbed
+echo "Remove cached embeddings"
+rm embeddings/elmo_cache_conll2000_data_perturbed_02.pkl
+rm -r pkl/conll2000_data/perturbed
 
 echo "Create new cached embeddings"
 # (1) Create cache for VELMO embeddings for clean data
@@ -1901,6 +1910,8 @@ mkdir $RESULT/pos
 mkdir pkl/conll2000_data
 mkdir pkl/conll2000_data/perturbed
 mkdir pkl/conll2000_data/perturbed/02
+mkdir $MODEL
+mkdir $MODEL/conll2000_data
 mkdir $MODEL/conll2000_data/perturbed
 mkdir $MODEL/conll2000_data/perturbed/02
 
@@ -2261,9 +2272,9 @@ RESULT='velmo_5e_ct_results'
 MODEL='velmo_5e_ct_chunk_models'
 
 # (0) Remove previous caches and embeddings
-#echo "Remove cached embeddings"
-#rm embeddings/elmo_cache_conll2000_data_clean.pkl
-#rm -r pkl/*
+echo "Remove cached embeddings"
+rm embeddings/elmo_cache_conll2000_data_clean.pkl
+rm -r pkl/*
 
 echo "Create new cached embeddings"
 # (1) Create cache for VELMO embeddings for clean data
@@ -2277,9 +2288,11 @@ python Create_ELMo_Cache.py -datasetName $DATASET \
 mkdir $RESULT
 mkdir $RESULT/chunking
 mkdir pkl/conll2000_data
+mkdir $MODEL
+mkdir $MODEL/conll2000_data
 
 # Do it 10 times
-for id in 1 2 3 4 5 6 7 8 9 10
+for id in 1 2 3 4 5
 do
     # remove previous models for clean training
     rm $MODEL/conll2000_data/*
@@ -2635,9 +2648,9 @@ RESULT='velmo_5e_at_results'
 MODEL='velmo_5e_at_chunk_models'
 
 # (0) Remove previous caches and embeddings
-#echo "Remove cached embeddings"
-#rm embeddings/elmo_cache_conll2000_data_perturbed_02.pkl
-#rm -r pkl/conll2000_data/perturbed
+echo "Remove cached embeddings"
+rm embeddings/elmo_cache_conll2000_data_perturbed_02.pkl
+rm -r pkl/conll2000_data/perturbed
 
 echo "Create new cached embeddings"
 # (1) Create cache for VELMO embeddings for clean data
@@ -2653,6 +2666,8 @@ mkdir $RESULT/chunking
 mkdir pkl/conll2000_data
 mkdir pkl/conll2000_data/perturbed
 mkdir pkl/conll2000_data/perturbed/02
+mkdir $MODEL
+mkdir $MODEL/conll2000_data
 mkdir $MODEL/conll2000_data/perturbed
 mkdir $MODEL/conll2000_data/perturbed/02
 
