@@ -24,6 +24,8 @@ mkdir $RESULT/pos
 mkdir pkl/conll2000_data
 mkdir pkl/conll2000_data/perturbed
 mkdir pkl/conll2000_data/perturbed/random
+mkdir $MODEL
+mkdir $MODEL/conll2000_data
 mkdir $MODEL/conll2000_data/perturbed
 mkdir $MODEL/conll2000_data/perturbed/random
 
@@ -403,6 +405,8 @@ mkdir $RESULT/pos
 mkdir pkl/conll2000_data
 mkdir pkl/conll2000_data/perturbed
 mkdir pkl/conll2000_data/perturbed/random
+mkdir $MODEL
+mkdir $MODEL/conll2000_data
 mkdir $MODEL/conll2000_data/perturbed
 mkdir $MODEL/conll2000_data/perturbed/random
 
@@ -781,6 +785,8 @@ mkdir $RESULT/chunking
 mkdir pkl/conll2000_data
 mkdir pkl/conll2000_data/perturbed
 mkdir pkl/conll2000_data/perturbed/random
+mkdir $MODEL
+mkdir $MODEL/conll2000_data
 mkdir $MODEL/conll2000_data/perturbed
 mkdir $MODEL/conll2000_data/perturbed/random
 
@@ -1160,6 +1166,8 @@ mkdir $RESULT/chunking
 mkdir pkl/conll2000_data
 mkdir pkl/conll2000_data/perturbed
 mkdir pkl/conll2000_data/perturbed/random
+mkdir $MODEL
+mkdir $MODEL/conll2000_data
 mkdir $MODEL/conll2000_data/perturbed
 mkdir $MODEL/conll2000_data/perturbed/random
 
