@@ -12,6 +12,9 @@
 
 
 pretrained/*
+results/*
+selmo_*_results/
+velmo_*_results/
 data/ace
 data/conll2003_ner
 data/ecb+
